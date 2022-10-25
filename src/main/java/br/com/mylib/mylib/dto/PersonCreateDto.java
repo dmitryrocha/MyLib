@@ -1,15 +1,9 @@
-package br.com.mylib.mylib.model;
+package br.com.mylib.mylib.dto;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import java.util.Date;
 
-@Entity
-public class Person {
+public class PersonCreateDto {
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private String pronoun;
@@ -95,6 +89,14 @@ public class Person {
         this.password = password;
     }
 
+    public String getImgUrl() {
+        return imgUrl;
+    }
+
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
+    }
+
     public Date getCreatedAt() {
         return createdAt;
     }
@@ -109,13 +111,5 @@ public class Person {
 
     public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
-    }
-
-    public String getImgUrl() {
-        return imgUrl;
-    }
-
-    public void setImgUrl(String imgUrl) {
-        this.imgUrl = imgUrl;
     }
 }

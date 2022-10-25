@@ -1,35 +1,24 @@
-package br.com.mylib.mylib.model;
+package br.com.mylib.mylib.dto;
 
-import javax.persistence.*;
+import br.com.mylib.mylib.model.GenreEnum;
+import br.com.mylib.mylib.model.Publishing;
+import br.com.mylib.mylib.model.Reader;
+
 import java.util.Date;
 import java.util.List;
 
-@Entity
-public class Book {
+public class BookCreateDto {
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
     private String title;
     private String author;
-    @ManyToOne
     private Publishing publishing;
     private int edition;
     private String code;
-    @Enumerated(EnumType.STRING)
     private GenreEnum genre;
     private boolean isAvaliable;
     private String imgUrl;
     private Date lastRentedIn;
-    @OneToMany
     List<Reader> readers;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getTitle() {
         return title;
@@ -87,6 +76,14 @@ public class Book {
         isAvaliable = avaliable;
     }
 
+    public String getImgUrl() {
+        return imgUrl;
+    }
+
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
+    }
+
     public Date getLastRentedIn() {
         return lastRentedIn;
     }
@@ -101,13 +98,5 @@ public class Book {
 
     public void setReaders(List<Reader> readers) {
         this.readers = readers;
-    }
-
-    public String getImgUrl() {
-        return imgUrl;
-    }
-
-    public void setImgUrl(String imgUrl) {
-        this.imgUrl = imgUrl;
     }
 }
