@@ -15,7 +15,7 @@ public class Publishing {
     private String cnpj;
     private String email;
     private String nameContactPerson;
-    @OneToMany(mappedBy = "books")
+    @OneToMany
     private List<Book> books = new ArrayList<>();
 
     public Long getId() {
