@@ -1,5 +1,6 @@
 package br.com.mylib.mylib.mapper;
 
+import br.com.mylib.mylib.dto.PersonCreateDto;
 import br.com.mylib.mylib.dto.PersonDto;
 import br.com.mylib.mylib.model.Person;
 import org.modelmapper.ModelMapper;
@@ -21,7 +22,7 @@ public class PersonMapper {
         return MODEL_MAPPER.map(personDto, Person.class);
     }
 
-    public Person toPersonCreate(PersonDto personDto) {
+    public Person toPersonCreate(PersonCreateDto personDto) {
         return MODEL_MAPPER.map(personDto, Person.class);
     }
 

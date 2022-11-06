@@ -29,7 +29,7 @@ public class BookController {
         return ResponseEntity.ok(mapper.toBookDtoList(bookList));
     }
 
-    @GetMapping(";{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<BookDto> findById(@PathVariable Long id) {
         Book book = service.findById(id);
         return ResponseEntity.ok(mapper.toBookDto(book));
